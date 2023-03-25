@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-var blobCount = 20;
-var blobSize = 200;
+var blobCount = 10;
+var blobSize = 150;
 var blobSpeed = 2;
 var blobColor = 'rgba(255,255,255,0.5)';
 var blobBorder = 'rgba(255,255,255,0.5)';

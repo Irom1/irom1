@@ -41,8 +41,8 @@ function moveBlobs() {
       x = window.innerWidth - blobSize;
       dx = -dx;
     }
-    if (y < 0) {
-      y = 0;
+    if (y < 15) {
+      y = 15;
       dy = -dy;
     }
     if (y > window.innerHeight - blobSize) {

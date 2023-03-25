@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 var blobCount = 10;
 var blobSize = 150;
 var blobSpeed = 2;
+var margin = 100;
 var blobColor = 'rgba(255,255,255,0.5)';
 var blobBorder = 'rgba(255,255,255,0.5)';
 var blobBorderWidth = '0px';
@@ -41,12 +42,12 @@ function moveBlobs() {
       x = window.innerWidth - blobSize;
       dx = -dx;
     }
-    if (y < 75) {
-      y = 75;
+    if (y < margin) {
+      y = margin;
       dy = -dy;
     }
-    if (y > window.innerHeight - blobSize) {
-      y = window.innerHeight - blobSize;
+    if (y > window.innerHeight - margin - blobSize) {
+      y = window.innerHeight - margin - blobSize;
       dy = -dy;
     }
     blob.setAttribute('x', x);

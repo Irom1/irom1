@@ -1,73 +1,159 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  
-  
+
+
   <title>Mori Finlayson-Johnecheck</title>
-  
-  <meta name="theme-color" content="#333">
+
+  <meta name="theme-color" content="rgba(242, 205, 93, 1)">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  
-  
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
-@import url("https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css");
 
-body {
-  background: #111;
-  background: linear-gradient(-0deg, #111, #333) no-repeat fixed;
-  color: #ddd;
-  margin: 0;
-  font-family: 'Rubik', sans-serif;
-}
 
-main {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-}
 
-main h2 {
-  font-weight: 300;
-}
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+    @import url("https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css");
 
-main i {
-  font-size: 30px;
-  padding: 0 6px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-main i:hover {
-  transform: scale(1.3);
-  color: var(--color);
-}
-</style>
+    *:not(input) {
+      user-select: none;
+      -webkit-user-select: none;
+    }
 
-  
-  
-  
+    body {
+      color: #666;
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      -webkit-text-size-adjust: 100%
+    }
+
+    body.dark {
+      color: #ccc;
+    }
+
+    .cover {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at top, rgba(242, 205, 93, 1) 10%, rgba(255, 255, 255, 0)),
+        /*radial-gradient(circle at top left, rgba(58, 23, 114, 1), rgba(255, 255, 255, 0)),*/
+        radial-gradient(circle at bottom right, rgba(83, 152, 190, 1), rgba(255, 255, 255, 0)),
+        radial-gradient(circle at bottom left, rgba(97, 213, 134, 1), rgba(255, 255, 255, 0));
+      z-index: -1;
+    }
+
+
+    main {
+      text-align: center;
+      margin: 100px 0;
+      width: 100%;
+      color: #fff;
+      z-index: 0;
+    }
+
+    main h2 {
+      font-weight: 300;
+    }
+
+    main i {
+      font-size: 30px;
+      padding: 0 6px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .text {
+      width: calc(100% - 40px);
+      max-width: 800px;
+      padding: 20px;
+      margin: 0 auto;
+      background-color: #fff7;
+      border-radius: 20px;
+      margin-bottom: 40px;
+    }
+
+    .dark .text {
+      background-color: #5557;
+    }
+
+    .text h1 {
+      margin: 10px 0;
+    }
+  </style>
+
+
+
+
 </head>
 
 <body>
+  <div class="cover"></div>
   <main>
-  <h1>Mori Finlayson-Johnecheck</h1>
-  <h2>@irom1</h2>
-  <i class="fa-brands fa-instagram" style="--color:violet" onclick="window.open('https://www.instagram.com/irom_2006/')"></i>
-  <i class="fa-brands fa-github" style="--color:grey" onclick="window.open('https://github.com/irom1')"></i>
-  <i class="fa-brands fa-strava" style="--color:orangered" onclick="window.open('https://www.strava.com/athletes/37505650')"></i>
-  <i class="fa-brands fa-snapchat" style="--color:yellow" onclick="window.open('https://www.snapchat.com/add/irom_16')"></i>
-  <i class="fa-brands fa-telegram" style="--color:#27a7e7" onclick="window.open('https://t.me/irom1')"></i>
-</main>
-  
-  <script src='/scripts/blobs.js'></script>
-  
-  
+    <h1>Mori Finlayson-Johnecheck</h1>
+    <h2>@irom1</h2>
+    <i class="fa-brands fa-instagram" style="--color:violet"
+      onclick="window.open('https://www.instagram.com/irom_2006/')"></i>
+    <i class="fa-brands fa-github" style="--color:grey" onclick="window.open('https://github.com/irom1')"></i>
+    <i class="fa-brands fa-strava" style="--color:orangered"
+      onclick="window.open('https://www.strava.com/athletes/37505650')"></i>
+    <i class="fa-brands fa-snapchat" style="--color:yellow"
+      onclick="window.open('https://www.snapchat.com/add/irom_16')"></i>
+    <i class="fa-brands fa-telegram" style="--color:#27a7e7" onclick="window.open('https://t.me/irom1')"></i>
+    <i class="fa-brands fa-codepen" style="--color:#fff" onclick="window.open('https://codepen.io/irom1')"></i>
+  </main>
+  <div class="text">
+    <h1>About</h1>
+    <p>
+      Coming soon...
+      <br><br>
+      Arrived totally in as between private. Favour of so as on pretty though elinor direct. Reasonable estimating be
+      alteration we themselves entreaties me of reasonably. Direct wished so be expect polite valley. Whose asked
+      stand
+      it sense no spoil to. Prudent you too his conduct feeling limited and. Side he lose paid as hope so face upon
+      be.
+      Goodness did suitable learning put.
+      <br><br>
+      Repulsive questions contented him few extensive supported. Of remarkably thoroughly he appearance in. Supposing
+      tolerably applauded or of be. Suffering unfeeling so objection agreeable allowance me of. Ask within entire
+      season
+      sex common far who family. As be valley warmth assure on. Park girl they rich hour new well way you. Face ye be
+      me
+      been room we sons fond.
+    </p>
+  </div>
+
+  <div class="text">
+    <h1>Projects</h1>
+    <p>
+      Coming soon...
+      <br><br>
+      Arrived totally in as between private. Favour of so as on pretty though elinor direct. Reasonable estimating be
+      alteration we themselves entreaties me of reasonably. Direct wished so be expect polite valley. Whose asked
+      stand
+      it sense no spoil to. Prudent you too his conduct feeling limited and. Side he lose paid as hope so face upon
+      be.
+      Goodness did suitable learning put.
+      <br><br>
+      Repulsive questions contented him few extensive supported. Of remarkably thoroughly he appearance in. Supposing
+      tolerably applauded or of be. Suffering unfeeling so objection agreeable allowance me of. Ask within entire
+      season
+      sex common far who family. As be valley warmth assure on. Park girl they rich hour new well way you. Face ye be
+      me
+      been room we sons fond.
+    </p>
+  </div>
+
+  <script src='/scripts/dark.js'></script>
+
+
 </body>
 
 </html>

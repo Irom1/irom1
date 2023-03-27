@@ -9,7 +9,7 @@ var blobBorder = 'rgba(255,255,255,0.5)';
 var blobBorderWidth = '0px';
 var blobBorderStyle = 'solid';
 var blobBorderRadius = '50%';
-var blobZIndex = -1;
+var blobZIndex = -2;
 var blobStyle = 'position:fixed;top:0px;left:0px;width:' + blobSize + 'px;height:' + blobSize + 'px;background-color:' + blobColor + ';border:' + blobBorderWidth + ' ' + blobBorderStyle + ' ' + blobBorder + ';border-radius:' + blobBorderRadius + ';z-index:' + blobZIndex + ';';
 var blobArray = [];
 for (var i = 0; i < blobCount; i++) {
@@ -73,7 +73,7 @@ var background = document.createElement('div');
 background.setAttribute('style', 'position:fixed;top:0px;left:0px;width:100%;height:100%;background-color:rgba(0,0,0,0.5);z-index:-2;');
 document.body.appendChild(background);
 
-background.style.zIndex = -1;
+background.style.zIndex = -2;
 
 for (var i = 0; i < blobCount; i++) {
   var blob = blobArray[i];

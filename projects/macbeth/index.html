@@ -1,1 +1,349 @@
-Coming soon...
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+  
+  <title>Macbeth Animated Cover</title>
+    <link rel="canonical" href="https://codepen.io/irom1/pen/KKrMgRv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Faustina:wght@700;800&display=swap");
+
+@import url("https://codepen.io/irom1/pen/PoxzmPW.css");
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  display: none;
+}
+
+body {
+  font-family: "Faustina", serif;
+  background: transparent;
+  z-index: 1;
+}
+
+.content {
+  display: none;
+  background: #000;
+  z-index: 5;
+}
+.blood .content {
+  display: block;
+}
+
+.sun {
+  position: fixed;
+  top: -150px;
+  --right: calc(100% - 150px);
+  right: var(--right);
+  background: #f7c14c;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 0 20px #f7c14c, 0 0 40px #f7c14c, 0 0 80px #ff7f27,
+    0 0 120px #ff7f27, 0 0 160px #ffcc33, 0 0 200px #ffcc33;
+  transition: background 0.3s, width 0.3s, height 0.3s, top 0.3s, right 0.3s;
+}
+.sun.moon {
+  width: 100px;
+  height: 100px;
+  background: #ffd;
+  top: 25px;
+  right: 25px;
+  box-shadow: 0 0 20px #ffd, 0 0 40px #f7c14c, 0 0 80px #f7c14c;
+}
+
+h1,
+h2 {
+  color: white;
+  position: fixed;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+h1 {
+  bottom: 5rem;
+  font-size: 4rem;
+}
+h2 {
+  bottom: 2.5rem;
+  font-size: 2rem;
+  color: #fffa;
+}
+
+.gradScroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 2s;
+  overflow-y: scroll;
+  z-index: -1;
+}
+.gradScroll.visible {
+  opacity: 1;
+}
+.gradScroll div {
+  height: 100%;
+  width: 100%;
+  background: #fff cover no-repeat;
+}
+.gradScroll div:nth-child(1) {
+  background-image: linear-gradient(to bottom, #f7c14c, #b4d3e7);
+}
+.gradScroll div:nth-child(2) {
+  background-image: linear-gradient(to bottom, #b4d3e7, #8abbd7, #f7a14c);
+}
+.gradScroll div:nth-child(3) {
+  background-image: linear-gradient(
+    to bottom,
+    #f7a14c,
+    #ff7f27,
+    #e95258,
+    #954e90,
+    #3d4e9e
+  );
+}
+.gradScroll div:nth-child(4) {
+  background-image: linear-gradient(to bottom, #3d4e9e, #333);
+}
+
+.container, .fog {
+  position: fixed;
+  bottom: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 600px;
+  max-height: 600px;
+  width: 65vw;
+  height: 65vw;
+}
+.images {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  --image: 0;
+}
+.images .slider {
+  display: flex;
+  width: 300%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  transition: left 0.3s;
+  left: calc(var(--image) * -100%);
+}
+.images .slide {
+  width: 100%;
+  height: 100%;
+  background: var(--url) no-repeat fixed center;
+  background-size: contain;
+}
+
+.grass {
+  background: #3f9a02;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 12rem;
+  border-radius: 50px 50px 0 0;
+  transition: height 0.3s;
+}
+.grass.hidden {
+  height: 0;
+}
+
+.fog {
+  display: none;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.fog.visible {
+  display: block;
+}
+
+.dagger {
+  animation: shake 1.5s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+</style>
+
+  
+  
+  
+</head>
+
+<body>
+  <div class="gradScroll">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div class="sun"></div>
+
+<div class="grass"></div>
+
+
+<div class="container">
+<div class="images">
+  <div class="slider">
+    <div class="slide" style="--url:url('castle.png')"></div>
+    <div class="slide dagger" style="--url:url('dagger.png')"></div>
+    <div class="slide" style="--url:url('witch.gif')"></div>
+  </div>
+</div>
+</div>
+
+<div class="fog"></div>
+
+<h1>Macbeth</h1>
+<h2>by William Shakespeare</h2>
+
+<!-- Blood animation for end -->
+<div class="content">
+
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+	<div class="col"></div>
+
+	<div class="text">Macbeth hath murdered sleep</div>
+
+</div>
+  
+  
+      <script id="rendered-js" >
+/* phases
+
+Sunrise - Castle
+Blue sky - Fog covers castle
+Twilight - Daggers
+Sunset - Three witches stir cauldren
+
+*/
+
+// define elms
+let scrollElm = document.querySelector(".gradScroll");
+let sun = document.querySelector(".sun");
+let grass = document.querySelector(".grass");
+let fog = document.querySelector(".fog");
+let images = document.querySelector(".images");
+
+// functions
+function focusImage(num) {
+  images.style.setProperty("--image", num - 1);
+}
+
+// setup
+scrollElm.classList.add("visible")
+document.body.addEventListener('click', () => {
+  document.documentElement.requestFullscreen();
+});
+
+// scroll event
+scrollElm.addEventListener('scroll', function() {
+  // find position
+  let segment = scrollElm.clientHeight;
+  let max = scrollElm.scrollHeight - segment;
+  let top = scrollElm.scrollTop;
+  let percent = top / max * 100;
+  // move sun
+  let right = "calc(" + Math.floor(100 - percent) + "% - 150px)";
+  sun.style.setProperty("--right", right);
+  if(percent > 90) sun.classList.add("moon");
+  else sun.classList.remove("moon");
+  // move grass
+  if (percent > 20) grass.classList.add("hidden");
+  else grass.classList.remove("hidden");
+  // move fog
+  if (percent > 20 && percent < 40) fog.classList.add("visible");
+  else fog.classList.remove("visible");
+  // slide through images
+  if(percent > 75) focusImage(3);
+  else if(percent > 40) focusImage(2);
+  else if(percent > 0) focusImage(1);
+  // show blood on reaching full scroll
+  if(percent == 100) document.body.classList.add("blood");
+  else document.body.classList.remove("blood");
+});
+    </script>
+
+  
+</body>
+
+</html>

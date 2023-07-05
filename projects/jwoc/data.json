@@ -50,7 +50,11 @@
     "Nea Shingler": {
         "url": "https://eventor.orienteering.org/Athletes/Details/40487",
         "category": "Australia: Women 20",
-        "error": true
+        "Nationality": "Australia",
+        "Year of birth": "2005",
+        "IOF ID": "40487",
+        "Gender": "Female",
+        "Discipline": "FootO"
     },
     "Toby Cazzolato": {
         "url": "https://eventor.orienteering.org/Athletes/Details/40580",
@@ -402,7 +406,11 @@
     "Zdravko Kolev": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37737",
         "category": "Bulgaria: Men 20",
-        "error": true
+        "Nationality": "Bulgaria",
+        "Year of birth": "2004",
+        "IOF ID": "37737",
+        "Gender": "Male",
+        "Discipline": "FootO"
     },
     "Preslav Shterev": {
         "url": "https://eventor.orienteering.org/Athletes/Details/33854",
@@ -619,42 +627,82 @@
     "Laura Bobach": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41813",
         "category": "Denmark: Women 20",
-        "error": true
+        "Nationality": "Denmark",
+        "Year of birth": "2004",
+        "IOF ID": "41813",
+        "Gender": "Female",
+        "Clubs": "OK Pan Aarhus\nRold Skov OK",
+        "Discipline": "FootO"
     },
     "Amalie Ertmann": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41187",
         "category": "Denmark: Women 20",
-        "error": true
+        "Nationality": "Denmark",
+        "Year of birth": "2004",
+        "IOF ID": "41187",
+        "Gender": "Female",
+        "Clubs": "Alleroed OK",
+        "Discipline": "FootO"
     },
     "Eva Ornhagen Joergensen": {
         "url": "https://eventor.orienteering.org/Athletes/Details/2665",
         "category": "Denmark: Women 20",
-        "error": true
+        "Nationality": "Denmark",
+        "Year of birth": "2003",
+        "IOF ID": "2665",
+        "Gender": "Female",
+        "Clubs": "OK Snab",
+        "Discipline": "FootO"
     },
     "Smilla Mogensen": {
         "url": "https://eventor.orienteering.org/Athletes/Details/46903",
         "category": "Denmark: Women 20",
-        "error": true
+        "Nationality": "Denmark",
+        "Year of birth": "2003",
+        "IOF ID": "46903",
+        "Gender": "Female",
+        "Clubs": "Farum OK",
+        "Discipline": "FootO"
     },
     "Ida Riis Madsen": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41670",
         "category": "Denmark: Women 20",
-        "error": true
+        "Nationality": "Denmark",
+        "Year of birth": "2004",
+        "IOF ID": "41670",
+        "Gender": "Female",
+        "Clubs": "OK Pan Aarhus\nRold Skov OK",
+        "Discipline": "FootO"
     },
     "Sigrid Hoeyer Staugaard": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37751",
         "category": "Denmark: Women 20",
-        "error": true
+        "Nationality": "Denmark",
+        "Year of birth": "2004",
+        "IOF ID": "37751",
+        "Gender": "Female",
+        "Clubs": "FIF Hilleroed Orientering",
+        "Discipline": "FootO"
     },
     "Casper Blakskjaer": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41179",
         "category": "Denmark: Men 20",
-        "error": true
+        "Nationality": "Denmark",
+        "Year of birth": "2005",
+        "IOF ID": "41179",
+        "Gender": "Male",
+        "Clubs": "Eksjo SOK\nOK Pan Aarhus",
+        "Discipline": "FootO"
     },
     "Niels Dalgaard": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41178",
         "category": "Denmark: Men 20",
-        "error": true
+        "Nationality": "Denmark",
+        "Year of birth": "2005",
+        "IOF ID": "41178",
+        "Gender": "Male",
+        "Clubs": "Eksjo SOK\nKolding OK",
+        "Discipline": "FootO"
     },
     "Hans Groenborg Nielsen": {
         "url": "https://eventor.orienteering.org/Athletes/Details/47095",
@@ -667,17 +715,32 @@
     "Oscar David Broman Jensen": {
         "url": "https://eventor.orienteering.org/Athletes/Details/33890",
         "category": "Denmark: Men 20",
-        "error": true
+        "Nationality": "Denmark",
+        "Year of birth": "2003",
+        "IOF ID": "33890",
+        "Gender": "Male",
+        "Clubs": "Alleroed OK",
+        "Discipline": "FootO"
     },
     "Mads Christian Maarup": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41204",
         "category": "Denmark: Men 20",
-        "error": true
+        "Nationality": "Denmark",
+        "Year of birth": "2006",
+        "IOF ID": "41204",
+        "Gender": "Male",
+        "Clubs": "Alleroed OK",
+        "Discipline": "FootO"
     },
     "Erik Groenborg Nielsen": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41235",
         "category": "Denmark: Men 20",
-        "error": true
+        "Nationality": "Denmark",
+        "Year of birth": "2006",
+        "IOF ID": "41235",
+        "Gender": "Male",
+        "Clubs": "Alleroed OK",
+        "Discipline": "FootO"
     },
     "Maria Eller": {
         "url": "https://eventor.orienteering.org/Athletes/Details/42329",
@@ -752,7 +815,13 @@
     "Chris Marcus Krahv": {
         "url": "https://eventor.orienteering.org/Athletes/Details/40358",
         "category": "Estonia: Men 20",
-        "error": true
+        "Nationality": "Estonia",
+        "Year of birth": "2005",
+        "IOF ID": "40358",
+        "Gender": "Male",
+        "Clubs": "Otepaa SK (FootO)\nTartu Katoliku SK (FootO)",
+        "Discipline": "FootO, SkiO",
+        "Instagram": "https://www.instagram.com/chrismarcus1/?hl=en"
     },
     "Renno Merenakk": {
         "url": "https://eventor.orienteering.org/Athletes/Details/42331",
@@ -1140,12 +1209,22 @@
     "Imogen Pieters": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41952",
         "category": "Great Britain: Women 20",
-        "error": true
+        "Nationality": "Great Britain",
+        "Year of birth": "2005",
+        "IOF ID": "41952",
+        "Gender": "Female",
+        "Clubs": "South Yorkshire Orienteers",
+        "Discipline": "FootO"
     },
     "Jim Bailey": {
         "url": "https://eventor.orienteering.org/Athletes/Details/39544",
         "category": "Great Britain: Men 20",
-        "error": true
+        "Nationality": "Great Britain",
+        "Year of birth": "2003",
+        "IOF ID": "39544",
+        "Gender": "Male",
+        "Clubs": "BOK",
+        "Discipline": "FootO"
     },
     "James Hammond": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41954",
@@ -1290,7 +1369,12 @@
     "Boglarka Czako": {
         "url": "https://eventor.orienteering.org/Athletes/Details/34063",
         "category": "Hungary: Women 20",
-        "error": true
+        "Nationality": "Hungary",
+        "Year of birth": "2003",
+        "IOF ID": "34063",
+        "Gender": "Female",
+        "Clubs": "MOM Budapest",
+        "Discipline": "FootO"
     },
     "Kamilla Kiss": {
         "url": "https://eventor.orienteering.org/Athletes/Details/42227",
@@ -1456,7 +1540,12 @@
     "Peleg Mitzafon": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37585",
         "category": "Israel: Men 20",
-        "error": true
+        "Nationality": "Israel",
+        "Year of birth": "2003",
+        "IOF ID": "37585",
+        "Gender": "Male",
+        "Clubs": "ISR OC Lev Hasharon Menashe\nSnattringe SK",
+        "Discipline": "FootO"
     },
     "Giulia Fignon": {
         "url": "https://eventor.orienteering.org/Athletes/Details/47119",
@@ -1679,7 +1768,12 @@
     "Agnese Jaunmuktane": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37453",
         "category": "Latvia: Women 20",
-        "error": true
+        "Nationality": "Latvia",
+        "Year of birth": "2004",
+        "IOF ID": "37453",
+        "Gender": "Female",
+        "Clubs": "Azimuts OK",
+        "Discipline": "FootO"
     },
     "Anda Jaunmuktane": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37462",
@@ -1877,7 +1971,12 @@
     "Anouk van der Burgt": {
         "url": "https://eventor.orienteering.org/Athletes/Details/43245",
         "category": "Netherlands: Women 20",
-        "error": true
+        "Nationality": "Netherlands",
+        "Year of birth": "2003",
+        "IOF ID": "43245",
+        "Gender": "Female",
+        "Clubs": "CA Rose\nKOVZ",
+        "Discipline": "FootO"
     },
     "Carl Gustav Jongenburger": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41701",
@@ -1904,7 +2003,12 @@
     "Katherine Babington": {
         "url": "https://eventor.orienteering.org/Athletes/Details/43052",
         "category": "New Zealand: Women 20",
-        "error": true
+        "Nationality": "New Zealand",
+        "Year of birth": "2005",
+        "IOF ID": "43052",
+        "Gender": "Female",
+        "Clubs": "Peninsula and Plains Orienteers",
+        "Discipline": "FootO, MTBO"
     },
     "Rachel Baker": {
         "url": "https://eventor.orienteering.org/Athletes/Details/43698",
@@ -1928,7 +2032,12 @@
     "Penelope Salmon": {
         "url": "https://eventor.orienteering.org/Athletes/Details/40284",
         "category": "New Zealand: Women 20",
-        "error": true
+        "Nationality": "New Zealand",
+        "Year of birth": "2003",
+        "IOF ID": "40284",
+        "Gender": "Female",
+        "Clubs": "Auckland",
+        "Discipline": "FootO"
     },
     "Zara Stewart": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41214",
@@ -1963,7 +2072,12 @@
     "Zefa Faavae": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41241",
         "category": "New Zealand: Men 20",
-        "error": true
+        "Nationality": "New Zealand",
+        "Year of birth": "2004",
+        "IOF ID": "41241",
+        "Gender": "Male",
+        "Clubs": "Nelson Orienteering Club",
+        "Discipline": "FootO, MTBO, SkiO, TrailO"
     },
     "Felix Hunt": {
         "url": "https://eventor.orienteering.org/Athletes/Details/42762",
@@ -2050,7 +2164,12 @@
     "Kristin Melby Jacobsen": {
         "url": "https://eventor.orienteering.org/Athletes/Details/40310",
         "category": "Norway: Women 20",
-        "error": true
+        "Nationality": "Norway",
+        "Year of birth": "2003",
+        "IOF ID": "40310",
+        "Gender": "Female",
+        "Clubs": "Lardal OL\nOK Linne (FootO)",
+        "Discipline": "FootO, SkiO"
     },
     "Pia Young Vik": {
         "url": "https://eventor.orienteering.org/Athletes/Details/40246",
@@ -2136,7 +2255,12 @@
     "Hanna Sudol": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37844",
         "category": "Poland: Women 20",
-        "error": true
+        "Nationality": "Poland",
+        "Year of birth": "2003",
+        "IOF ID": "37844",
+        "Gender": "Female",
+        "Clubs": "IGTISA\nKOB Chocen\nPolish National Team\nWKS Slask Wroclaw",
+        "Discipline": "FootO"
     },
     "Mateusz Kula": {
         "url": "https://eventor.orienteering.org/Athletes/Details/28582",
@@ -2152,7 +2276,12 @@
     "Jedrzej Pachnik": {
         "url": "https://eventor.orienteering.org/Athletes/Details/42260",
         "category": "Poland: Men 20",
-        "error": true
+        "Nationality": "Poland",
+        "Year of birth": "2006",
+        "IOF ID": "42260",
+        "Gender": "Male",
+        "Clubs": "UKS Orientpark Iwiny",
+        "Discipline": "FootO, MTBO, SkiO"
     },
     "Stanislaw Pachnik": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37774",
@@ -2257,7 +2386,11 @@
     "Andreea Manu": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37832",
         "category": "Romania: Women 20",
-        "error": true
+        "Nationality": "Romania",
+        "Year of birth": "2005",
+        "IOF ID": "37832",
+        "Gender": "Female",
+        "Discipline": "FootO"
     },
     "Diana Maria Pop": {
         "url": "https://eventor.orienteering.org/Athletes/Details/44661",
@@ -2327,7 +2460,12 @@
     "Catalin Vadean": {
         "url": "https://eventor.orienteering.org/Athletes/Details/31903",
         "category": "Romania: Men 20",
-        "error": true
+        "Nationality": "Romania",
+        "Year of birth": "2003",
+        "IOF ID": "31903",
+        "Gender": "Male",
+        "Clubs": "CS Stiinta Electro Sistem Baia Mare",
+        "Discipline": "FootO, TrailO"
     },
     "Ervin Vigh": {
         "url": "https://eventor.orienteering.org/Athletes/Details/42374",
@@ -2511,7 +2649,12 @@
     "Sarah Wimberley": {
         "url": "https://eventor.orienteering.org/Athletes/Details/39713",
         "category": "South Africa: Women 20",
-        "error": true
+        "Nationality": "South Africa",
+        "Year of birth": "2003",
+        "IOF ID": "39713",
+        "Gender": "Female",
+        "Clubs": "Rand Athletic Club Orienteers",
+        "Discipline": "FootO"
     },
     "Cameron Morrison": {
         "url": "https://eventor.orienteering.org/Athletes/Details/44128",
@@ -2689,12 +2832,21 @@
     "Hannes Mogensen": {
         "url": "https://eventor.orienteering.org/Athletes/Details/42280",
         "category": "Sweden: Men 20",
-        "error": true
+        "Nationality": "Sweden",
+        "Year of birth": "2005",
+        "IOF ID": "42280",
+        "Gender": "Male",
+        "Discipline": "FootO"
     },
     "Arvid Skepp": {
         "url": "https://eventor.orienteering.org/Athletes/Details/42130",
         "category": "Sweden: Men 20",
-        "error": true
+        "Nationality": "Sweden",
+        "Year of birth": "2004",
+        "IOF ID": "42130",
+        "Gender": "Male",
+        "Clubs": "Savedalens AIK",
+        "Discipline": "FootO"
     },
     "Marcus Stenebo": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41881",
@@ -2729,7 +2881,12 @@
     "Ines Berger": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37660",
         "category": "Switzerland: Women 20",
-        "error": true
+        "Nationality": "Switzerland",
+        "Year of birth": "2003",
+        "IOF ID": "37660",
+        "Gender": "Female",
+        "Clubs": "ANCO",
+        "Discipline": "FootO"
     },
     "Kati Hotz": {
         "url": "https://eventor.orienteering.org/Athletes/Details/46917",
@@ -2744,17 +2901,32 @@
     "Lisa Hubmann": {
         "url": "https://eventor.orienteering.org/Athletes/Details/42112",
         "category": "Switzerland: Women 20",
-        "error": true
+        "Nationality": "Switzerland",
+        "Year of birth": "2004",
+        "IOF ID": "42112",
+        "Gender": "Female",
+        "Clubs": "OL Regio Wil",
+        "Discipline": "FootO"
     },
     "Nina Hubmann": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37657",
         "category": "Switzerland: Women 20",
-        "error": true
+        "Nationality": "Switzerland",
+        "Year of birth": "2003",
+        "IOF ID": "37657",
+        "Gender": "Female",
+        "Clubs": "OL Regio Wil",
+        "Discipline": "FootO"
     },
     "Alina Niggli": {
         "url": "https://eventor.orienteering.org/Athletes/Details/26630",
         "category": "Switzerland: Women 20",
-        "error": true
+        "Nationality": "Switzerland",
+        "Year of birth": "2003",
+        "IOF ID": "26630",
+        "Gender": "Female",
+        "Clubs": "ANCO\nHalden SK (FootO)\nO'Jura (FootO)\nSkiO Swiss",
+        "Discipline": "FootO, SkiO"
     },
     "Henriette Radzikowski": {
         "url": "https://eventor.orienteering.org/Athletes/Details/47076",
@@ -2779,27 +2951,55 @@
     "Dominic Mueller": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37651",
         "category": "Switzerland: Men 20",
-        "error": true
+        "Nationality": "Switzerland",
+        "Year of birth": "2003",
+        "IOF ID": "37651",
+        "Gender": "Male",
+        "Clubs": "OLG Thun",
+        "Discipline": "FootO",
+        "Instagram": "http://www.instagram.com/dominic.mueller"
     },
     "Elia Ren": {
         "url": "https://eventor.orienteering.org/Athletes/Details/42132",
         "category": "Switzerland: Men 20",
-        "error": true
+        "Nationality": "Switzerland",
+        "Year of birth": "2004",
+        "IOF ID": "42132",
+        "Gender": "Male",
+        "Clubs": "ASCO Lugano\nGoteborg Majorna OK",
+        "Discipline": "FootO",
+        "Instagram": "http://www.instagram.com/ren_elia_"
     },
     "Pascal Schaerer": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37648",
         "category": "Switzerland: Men 20",
-        "error": true
+        "Nationality": "Switzerland",
+        "Year of birth": "2003",
+        "IOF ID": "37648",
+        "Gender": "Male",
+        "Clubs": "OLG Pfaeffikon",
+        "Discipline": "FootO"
     },
     "Joschi Schmid": {
         "url": "https://eventor.orienteering.org/Athletes/Details/42114",
         "category": "Switzerland: Men 20",
-        "error": true
+        "Nationality": "Switzerland",
+        "Year of birth": "2004",
+        "IOF ID": "42114",
+        "Gender": "Male",
+        "Clubs": "OL Regio Wil",
+        "Discipline": "FootO",
+        "Instagram": "http://www.instagram.com/joschi.schmid"
     },
     "Benjamin Wey": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37649",
         "category": "Switzerland: Men 20",
-        "error": true
+        "Nationality": "Switzerland",
+        "Year of birth": "2003",
+        "IOF ID": "37649",
+        "Gender": "Male",
+        "Clubs": "OLG Zurich",
+        "Discipline": "FootO"
     },
     "Sude Naz Kulah": {
         "url": "https://eventor.orienteering.org/Athletes/Details/42290",
@@ -2862,7 +3062,13 @@
     "Veronika Arbuzova": {
         "url": "https://eventor.orienteering.org/Athletes/Details/37445",
         "category": "Ukraine: Women 20",
-        "error": true
+        "Nationality": "Ukraine",
+        "Year of birth": "2004",
+        "IOF ID": "37445",
+        "Gender": "Female",
+        "Clubs": "KSO Orientir",
+        "Discipline": "FootO",
+        "Instagram": "https://www.instagram.com/invites/contact/?i=41l93k8yw5l6&utm_content=2np1zbk"
     },
     "Kateryna Kropyvnytska": {
         "url": "https://eventor.orienteering.org/Athletes/Details/41751",

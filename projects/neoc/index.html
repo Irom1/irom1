@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>New England Orienteering Club</title>
+    <style>
+        @import url("https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css");
+
+        body {
+            --blue: #22466f;
+            --red: #ed4804;
+            /*   background: var(--blue); */
+            margin: 0;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        h1 {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        header {
+            background: var(--blue);
+            color: white;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            gap: 5px;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+            transition: padding 300ms;
+        }
+
+        .scrolled header {
+            padding: 10px 20px;
+        }
+
+        header img {
+            height: 100px;
+            transition: height 300ms;
+        }
+
+        .scrolled header img {
+            height: 50px;
+        }
+
+        header div {
+            padding: 15px;
+        }
+
+        header div h1,
+        header div p {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        header div span:after {
+            content: "\f0d7";
+            font-family: "Font Awesome 6 Pro";
+            font-weight: bold;
+            margin-left: 8px;
+            margin-right: 15px;
+        }
+
+        header div h1 {
+            /*   margin-bottom: 10px;  */
+            font-size: 30px;
+            height: 45px;
+            overflow: hidden;
+            transition: height 300ms;
+        }
+
+        .scrolled header div h1 {
+            height: 0;
+        }
+
+        .highlight {
+            background: yellow;
+            color: black;
+            padding: 0 5px;
+            border-radius: 5px;
+        }
+
+        pinned {
+            background: yellow;
+            color: black;
+            display: block;
+            position: fixed;
+            cursor: pointer;
+            right: 20px;
+            z-index: 3;
+            width: auto;
+            border-radius: 10px;
+            text-align: center;
+            padding: 25px 20px;
+            top: 35px;
+            transition: top 300ms, padding 300ms;
+        }
+
+        .scrolled pinned {
+            top: 15px;
+            padding: 10px 20px;
+        }
+
+        .images {
+            width: 100%;
+            height: 400px;
+            max-height: calc(100vh - 140px);
+            /*   background: #666; */
+            background: black url("https://live.staticflickr.com/676/23055289961_0a65122de3_b.jpg") no-repeat center;
+            /*   background: black
+    url("https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8Zm9yZXN0fHx8fHx8MTcwNTc3NjcxOA&ixlib=rb-4.0.3&q=80&w=1600")
+    no-repeat fixed; */
+            background-size: cover;
+            color: white;
+            position: relative;
+            margin-top: 140px;
+        }
+
+        .images div {
+            position: absolute;
+            /*   margin-bottom: 25px; */
+            width: 100%;
+            top: calc(50% - 25px);
+        }
+
+        .images div h1 {
+            text-align: center;
+            font-size: 35px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        main {
+            /*   min-height: 100vh; */
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        main article {
+            width: 100%;
+        }
+
+        main article h1 {
+            color: var(--red);
+        }
+
+        button {
+            padding: 10px 15px;
+            background: var(--red);
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        main aside {
+            min-width: 300px;
+            width: 50%;
+        }
+
+        main aside h1 {
+            margin-bottom: 0;
+        }
+
+        main aside>div {
+            position: sticky;
+            top: 90px;
+        }
+
+        main aside>div>div {
+            background: #eee;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: white;
+            background: url("https://www.newenglandorienteering.org/media/templates/site/cassiopeia_neoc_cass/images/Wrentham_footer_wDrop.jpg");
+        }
+
+        footer div {
+            /*      background: #eee3; */
+            /*backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px); */
+            color: black;
+            font-size: 18px;
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 10px;
+            background: #eee;
+            /*   padding: 30px 10px; */
+            /*   padding-top: 20px; */
+        }
+
+        aside tr {
+            padding: 5px 0;
+            display: block;
+            border-top: 1px solid #ddd;
+        }
+
+        aside tr:first-child {
+            border-top: none;
+            padding-top: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #224faa;
+            cursor: pointer;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        span.spacing {
+            display: block;
+            height: 5px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, calc(50% - 10px)));
+            gap: 20px;
+        }
+
+        .cards div {
+            background: #eee;
+            border: 1px solid #ddd;
+            text-align: center;
+            border-radius: 10px;
+            background: var(--image) no-repeat fixed center;
+            background-size: cover;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .cards div span {
+            display: block;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            font-size: 30px;
+            font-weight: bold;
+            background: #eee5;
+            color: black;
+            padding: 80px 10px;
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+        }
+
+        @media (max-width: 1000px) {
+            main {
+                flex-direction: column;
+            }
+
+            main aside {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cards {
+                grid-template-columns: repeat(auto-fill, 100%);
+            }
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <header>
+        <img src="https://www.newenglandorienteering.org/images/troll-color.svg" />
+        <div>
+            <h1>The New England Orienteering Club</h1>
+            <p>
+                <span>About</span>
+                <span>News</span>
+                <span>Resources</span>
+                <span>Events</span>
+                <span>Results</span>
+                <!--       <i class="fa-brands fa-instagram"></i></p> -->
+        </div>
+    </header>
+
+    <div class="images">
+        <div>
+            <h1>Growing the navigational sport since 1972</h1>
+        </div>
+    </div>
+
+    <main>
+        <article>
+            <h1>Welcome to The New England Orienteering Club (NEOC)</h1>
+            <p>NEOC offers orienteering activities during the spring and fall, and sometimes fits in a few events during
+                the ‘off-season’. Here is what we have in store for the community in 2023. Since this is a mockup this
+                text needs to be updated.</p>
+            <p>Join us as <a href="/about-neoc/join-neoc" target="_self">members</a> in 2023 – check out our member
+                benefit page! Join us as&nbsp;<a href="/volunteer/volunteer-opportunities" target="_self">volunteers</a>
+                in 2023. We are an&nbsp;<em>all-volunteer organization</em>, and we rely on you to help bring
+                orienteering to the New England region.</p>
+
+            <br>
+
+            <div class="cards">
+                <div style="--image:url('https://live.staticflickr.com/5733/30253827152_681393c791_b.jpg')">
+                    <span>Upcoming Events</span>
+                </div>
+                <div
+                    style="--image:url('https://images.unsplash.com/photo-1611761969105-fc7c88070adf?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHNub3clMjBpbiUyMHdvb2RzfGVufDB8fDB8fHww')">
+                    <span>2024 Winter Challange</span>
+                </div>
+                <div style="--image:url('https://orienteeringusa.org/wp-content/uploads/2023/10/LiveloxBlue17.png')">
+                    <span>Training Opportunities</span>
+                </div>
+                <div style="--image:url('https://live.staticflickr.com/7553/27461725335_d3b70d1923_b.jpg')">
+                    <span>What is Orienteering?</span>
+                </div>
+            </div>
+
+        </article>
+
+        <aside>
+            <div>
+                <div>
+                    <h1>Recent News</h1>
+                    <table>
+                        <tbody>
+                            <tr class="jevrow0">
+                                <td class="mod_events_latest_first"><span class="mod_events_latest_date">Mon, Mar
+                                        18</span> (1-day)<br><span class="mod_events_latest_content"><a
+                                            href="/events-all-categories/eventdetail/1135/128|129|132/neoc-board-of-directors-meeting"
+                                            target="_top">NEOC Board of Directors Meeting</a></span></td>
+                            </tr>
+                            <tr class="jevrow1">
+                                <td class="mod_events_latest"><span class="mod_events_latest_date">Sat, Mar 30</span>
+                                    (1-day)<br><span class="mod_events_latest_content"><a
+                                            href="/events-all-categories/eventdetail/1140/128|129|132/neoc-adult-leader-training-metrowest-ymca-outdoor-center-hopkinton-ma"
+                                            target="_top">NEOC: Adult Leader Training, MetroWest YMCA Outdoor Center
+                                            (Hopkinton, MA)</a></span></td>
+                            </tr>
+                            <tr class="jevrow1">
+                                <td class="mod_events_latest"><span class="mod_events_latest_date">Sat, Mar 30</span>
+                                    (1-day)<br><span class="mod_events_latest_content"><a
+                                            href="/events-all-categories/eventdetail/1139/128|129|132/neoc-introduction-to-orienteering-metrowest-ymca-outdoor-center-hopkinton-ma"
+                                            target="_top">NEOC: Introduction to Orienteering - MetroWest YMCA Outdoor
+                                            Center (Hopkinton, MA)</a></span></td>
+                            </tr>
+                            <tr class="jevrow1">
+                                <td class="mod_events_latest"><span class="mod_events_latest_date">Sat, Mar 30</span>
+                                    (8-day)<br><span class="mod_events_latest_content"><a
+                                            href="/events-all-categories/eventdetail/1138/128|129|132/neoc-metrowest-ymca-outdoor-center-byom-hopkinton-ma"
+                                            target="_top">NEOC: MetroWest YMCA Outdoor Center - BYOM (Hopkinton,
+                                            MA)</a></span></td>
+                            </tr>
+                            <tr class="jevrow0">
+                                <td class="mod_events_latest"><span class="mod_events_latest_date">Sat, Apr 13</span>
+                                    (1-day)<br><span class="mod_events_latest_content"><a
+                                            href="/events-all-categories/eventdetail/1141/128|129|132/neoc-spring-scout-o"
+                                            target="_top">NEOC: Spring Scout-O</a></span></td>
+                            </tr>
+                            <tr class="jevrow0">
+                                <td class="mod_events_latest"><span class="mod_events_latest_date">Sat, Apr 13</span>
+                                    (16-day)<br><span class="mod_events_latest_content"><a
+                                            href="/events-all-categories/eventdetail/1146/128|129|132/neoc-hale-education-byom-westwood-ma"
+                                            target="_top">NEOC: Hale Education - BYOM (Westwood, MA)</a></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br>
+
+                <div>
+                    <h1>Stay in Touch</h1>
+                    <span class="spacing"></span>
+                    <span class="spacing"></span>
+                    <button>Join our Newsletter <i class="fa-solid fa-arrow-right"></i></button>
+                    <span class="spacing"></span>
+                    <button style="background:var(--blue)">Follow us on Facebook <i
+                            class="fa-brands fa-facebook"></i></button>
+                </div>
+
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div>
+            &copy; New England Orienteering Club 2024. All rights reserved.
+            <br>
+            <a>About</a> -
+            <a>Contact</a> -
+            <a>Privacy Policy</a>
+        </div>
+
+    </footer>
+
+    <pinned>2024 Membership</pinned>
+
+    <script>
+        window.addEventListener("scroll", checkScroll);
+        window.addEventListener("load", checkScroll);
+        let scrollTrigger = 140;
+        function checkScroll() {
+            if (document.body.scrollTop > scrollTrigger || document.documentElement.scrollTop > scrollTrigger) {
+                document.body.classList.add("scrolled");
+            } else {
+                document.body.classList.remove("scrolled");
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

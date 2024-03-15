@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>BullitTiming Live Results+ (#1)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#352720" />
+        <style>
+            :root {
+                --bg: #161210;
+                --alt: #262220;
+                --color: #ddd;
+                --header: #352720;
+            }
+
+            .light {
+                --bg: #fff;
+                --alt: #f5eae0;
+                --color: black;
+                --header: #eca;
+            }
+
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--color);
+                -webkit-text-size-adjust: 100%;
+                font-family: arial, sans-serif;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+                    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            header {
+                display: flex;
+                background: var(--header);
+                padding: 10px;
+            }
+
+            header img {
+                height: 50px;
+                cursor: pointer;
+                filter: brightness(0.3) invert(1);
+            }
+
+            .light header img {
+                filter: brightness(0.3);
+            }
+
+            header div {
+                text-align: right;
+                width: 100%;
+                cursor: pointer;
+                padding: 2px 0;
+            }
+
+            header h1 {
+                margin: 0;
+                font-size: 18px;
+            }
+
+            header p {
+                margin: 0;
+                font-size: 13px;
+                padding-top: 5px;
+            }
+
+            @media (max-width: 600px) {
+
+                /* Mobile */
+                .desktop {
+                    display: none;
+                }
+            }
+
+            @media (min-width: 600px) {
+
+                /* Desktop/Landscape */
+                .mobile {
+                    display: none;
+                }
+
+                body {
+                    -webkit-text-size-adjust: 70%;
+                }
+            }
+
+            .menuOpen {
+                overflow: hidden;
+            }
+
+            .menuOpen .menu {
+                margin-top: 0;
+            }
+
+            .menu {
+                height: 100vh;
+                margin-top: -100vh;
+                transition: margin-top 0.3s;
+                padding: 20px;
+                padding-top: 65px;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            tr {
+                background: var(--bg);
+            }
+
+            tr:nth-child(even) {
+                background: var(--alt);
+            }
+
+            th {
+                position: sticky;
+                top: 0;
+                background: var(--bg);
+            }
+
+            td,
+            th {
+                border: 1px solid #dddddd;
+                border: none;
+                text-align: left;
+                padding: 8px;
+                line-height: 1.25;
+            }
+
+            th:first-child,
+            td:first-child {
+                text-align: center;
+            }
+
+            td .details {
+                padding-top: 5px;
+                font-size: 13px;
+                display: none;
+            }
+
+            @media (max-width: 600px) {
+
+                th:first-child,
+                th:last-child {
+                    width: 1%;
+                    white-space: nowrap;
+                }
+
+                th:first-child,
+                td:first-child {
+                    padding-left: 12px;
+                }
+
+                th:last-child,
+                td:last-child {
+                    padding-right: 12px;
+                }
+
+                .show .details {
+                    display: block;
+                }
+            }
+
+            .orange {
+                color: #f05f40;
+            }
+
+            .gray {
+                color: #999;
+            }
+
+            /* experimental */
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                transition: top 0.2s ease-in-out;
+                z-index: 100;
+                height: 70px;
+                overflow: hidden;
+            }
+
+            table {
+                margin-top: 70px;
+                /* add space for fixed header */
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img onclick="toggleMenu()" src="https://bullitttiming.com/logo_wh.png" />
+            <div onclick="loadResults()">
+                <h1>Live Results</h1>
+                <p>Page loading...</p>
+            </div>
+        </header>
+        <div class="menu">
+            <h1>Options</h1>
+            <label>Class:</label>
+            <select id="className" onchange="toggleFilter('classGroupName',this.value)">
+                <option>none</option>
+            </select>
+            <br>
+            <br>
+            <label>Only team MA</label>
+            <input type="checkbox" id="state" onchange="toggleFilter('state','MA')">
+                <br><br>
+                    <a href="/projects/timing/2">Result Server #2</a>
+        </div>
+        <table></table>
+        <script id="rendered-js">
+            let filters = {};
+            // URLs:
+            // event
+            // class-groups
+            // individualResults
+            let baseURL = "https://bullitttiming-live-data.s3.amazonaws.com/";
+            //baseURL ="https://proxy.irom.workers.dev/?https://bullitttiming-live2-data.s3.amazonaws.com/";
+            let expandedNames = [];
+            async function loadEvent() {
+                // get data
+                let url = baseURL + "event";
+                let data = await fetch(url);
+                data = await data.json();
+                data = data.data;
+                // update title
+                let titleElm = document.querySelector("header h1");
+                titleElm.innerHTML = " <span class = 'desktop' > Live Results: </span>" + data.attributes.name;
+                // log
+                console.log(data);
+                // get classes
+                url = baseURL + "class-groups";
+                data = await fetch(url);
+                data = await data.json();
+                data = data.data;
+                console.log(data);
+                let list = document.querySelector("#className");
+                list.innerHTML = "";
+                data.forEach(item => {
+                    let option = document.createElement("option");
+                    option.innerHTML = item.attributes.name;
+                    list.options.add(option);
+                });
+                toggleFilter('classGroupName', data[0].attributes.name)
+                loadResults();
+            }
+            async function loadResults() {
+                // loader text
+                let updated = document.querySelector("header p");
+                //if(updated.innerText == "Updating...") return;
+                updated.innerText = "Updating...";
+                // data
+                let url = baseURL + "individualResults?t=" + new Date().getTime();
+                let data = await fetch(url);
+                data = await data.json();
+                // dom
+                let table = document.querySelector("table");
+                table.innerHTML = "";
+                let headerRow = table.insertRow();
+                headerRow.innerHTML = `
+									<th>#</th>
+									<th>Name
+										<span class='mobile'> (tap for splits)</span>
+									</th>`;
+                // split column headers
+                let firstOne = data[0];
+                data.forEach(elm => {
+                    if (data in elm && attributes in elm.data && elm.data.attributes.classGroupName && elm.data.attributes.classGroupName == filters[classGroupName]) {
+                        firstOne = elm;
+                    }
+                });
+                let splits = firstOne.data.attributes.splits;
+                let splitTitles = [];
+                splits.forEach((split) => {
+                    if (split.isPublic) splitTitles.push(split.name);
+                });
+                if (splitTitles.length > 0 && !splitTitles.includes("Finish")) splitTitles.push("Finish");
+                splitTitles.forEach((title) => {
+                    headerRow.innerHTML += `
+									<th class='desktop'>${title}</th>`;
+                });
+                // finish header
+                headerRow.innerHTML += `
+									<th>Time</th>`;
+                // process
+                data.forEach((result) => {
+                    result = result.data;
+                    let attributes = result.attributes;
+                    // check filters
+                    let passed = true;
+                    let filterNames = Object.keys(filters);
+                    filterNames.forEach((filter) => {
+                        if (filter in attributes && attributes[filter] != filters[filter]) {
+                            passed = false;
+                        }
+                    });
+                    if (!passed) return;
+                    // info
+                    let name = attributes.firstName + " " + attributes.lastName;
+                    let {
+                        bib,
+                        club,
+                        place,
+                        totalTimeFormatted,
+                        className,
+                        classGroupName,
+                        status,
+                        splits,
+                        assignedStartTime,
+                        timeBackInMilliseconds,
+                        finishSplit,
+                        finishSplitPlace,
+                        totalTimeWithoutPenaltyInMilliseconds,
+                        state
+                    } = attributes;
+                    // parse time status
+                    let now = new Date();
+                    assignedStartTime = new Date(assignedStartTime);
+                    if (now.getTime() < assignedStartTime.getTime()) {
+                        totalTimeFormatted = "Start: ";
+                        totalTimeFormatted += assignedStartTime.toLocaleTimeString("it-IT");
+                    } else if (totalTimeFormatted == "") totalTimeFormatted = status;
+                    let timeBackFormatted = timeBackInMilliseconds ? "+" + msToTime(timeBackInMilliseconds) : "";
+                    // parse splits
+                    let splitString = "";
+                    let finishExists = false;
+                    splits.forEach((split) => {
+                        if (split.name == "Finish") finishExists = true;
+                    });
+                    if (!finishExists && splits.length > 0) {
+                        splits.push({
+                            isPublic: true,
+                            split: finishSplit,
+                            splitPlace: finishSplitPlace,
+                            elapsed: totalTimeWithoutPenaltyInMilliseconds,
+                            elapsedPlace: place,
+                            name: "Finish"
+                        });
+                    }
+                    let splitList = [];
+                    splits.forEach((split) => {
+                        if (!split.isPublic) return;
+                        if (!split.split) {
+                            splitList.push("----");
+                            return;
+                        }
+                        let duration = msToTime(split.split);
+                        let elapsed = msToTime(split.elapsed);
+                        let item = elapsed + " (" + split.elapsedPlace + ") <br > <i > " +
+                        duration + " (" + split.splitPlace + ")</i>";
+                        splitList.push(item);
+                        splitString += split.name + ": " + elapsed + " (" + split.elapsedPlace + ")  <i > " +
+                        duration + " (" + split.splitPlace + ")</i> <br > ";
+                    });
+                    if (splitString.length > 0) splitString = " <div class = 'details' > " + splitString + " </div>";
+                    // add to page
+                    let row = table.insertRow();
+                    row.setAttribute("data-name", name);
+                    row.innerHTML = `
+    
+											<td>${place || "[" + bib + "]"}</td>
+											<td>${name}
+												<br>${club}, ${state} 
+													<span class="orange">${className}</span> ${splitString}
+												</td>`;
+                    splitList.forEach((item) => {
+                        row.innerHTML += " <td class = 'desktop' > " + item + " </td>";
+                    });
+                    row.innerHTML += `
+												<td>${totalTimeFormatted}
+													<br>
+														<span class="gray">${timeBackFormatted}</span>
+													</td>`;
+                });
+                // add event listeners
+                let rows = document.querySelectorAll("[data-name]");
+                rows.forEach((row) => {
+                    let name = row.getAttribute("data-name");
+                    if (expandedNames.includes(name)) row.classList.add("show");
+                    row.addEventListener("click", function() {
+                        let visible = row.classList.toggle("show");
+                        let included = expandedNames.includes(name);
+                        if (visible && !included) expandedNames.push(name);
+                        if (!visible && included) {
+                            let i = expandedNames.indexOf(name);
+                            expandedNames.splice(i, 1);
+                        }
+                    });
+                });
+                // loading text
+                updated.innerText = "Updated: " + new Date().toLocaleTimeString() + " - Tap to refresh";
+                // log
+                console.log(data);
+            }
+            // run scripts when first loaded
+            loadEvent();
+            loadResults();
+            setInterval(loadResults, 30 * 1000);
+            // experimental scrolling header
+            var prevScrollpos = window.pageYOffset;
+            /* Get the header element and it's position */
+            var headerDiv = document.querySelector("header");
+            var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+            window.onscroll = function() {
+                var currentScrollPos = window.pageYOffset;
+                /* if we're scrolling up, or we haven't passed the header,
+                   show the header at the top */
+                if (prevScrollpos > currentScrollPos || currentScrollPos < headerBottom) {
+                    headerDiv.style.top = "0";
+                } else {
+                    /* otherwise we're scrolling down & have passed the header so hide it */
+                    headerDiv.style.top = "-70px";
+                }
+                prevScrollpos = currentScrollPos;
+            };
+            // other functions
+            function msToTime(duration) {
+                var milliseconds = Math.floor((duration % 1000) / 100),
+                    seconds = Math.floor((duration / 1000) % 60),
+                    minutes = Math.floor((duration / (1000 * 60)) % 60),
+                    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+                hours = hours < 10 && hours > 0 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                if (hours == 0) hours = "";
+                else hours += ":";
+                /*
+                if(minutes == 0) minutes = "";
+                else */
+                minutes += ":";
+                return hours + minutes + seconds + "." + milliseconds;
+            }
+            /* Change browser theme color when system dark mode */
+            function changeTheme() {
+                let color = document.querySelector(`meta[name="theme-color"]`);
+                if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    // Dark mode on
+                    document.body.classList.remove("light");
+                    color.content = "#352720";
+                } else {
+                    document.body.classList.add("light");
+                    color.content = "#ECA";
+                }
+            }
+            try {
+                window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", changeTheme);
+            } catch (e) {}
+            changeTheme(); //window.addEventListener("load",changeTheme);
+            function toggleMenu() {
+                window.scrollTo(0, 0);
+                document.body.classList.toggle("menuOpen");
+                //window.open('https://bullitttiming.com/');
+            }
+
+            function toggleFilter(id, value) {
+                console.log(id, value);
+                if (filters[id] == value) {
+                    delete filters[id];
+                } else {
+                    filters[id] = value;
+                }
+                loadResults();
+            }
+
+            function initFilters() {
+                document.querySelectorAll("input").forEach(input => {
+                    input.value = "";
+                    input.checked = false;
+                })
+            }
+            initFilters();
+        </script>
+    </body>
+</html>

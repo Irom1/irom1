@@ -232,7 +232,7 @@
                 data = data.data;
                 // update title
                 let titleElm = document.querySelector("header h1");
-                titleElm.innerHTML = " < span class = 'desktop' > Live Results: < /span>" + data.attributes.name;
+                titleElm.innerHTML = " <span class = 'desktop' > Live Results: </span>" + data.attributes.name;
                 // log
                 console.log(data);
                 // get classes
@@ -353,13 +353,13 @@
                         }
                         let duration = msToTime(split.split);
                         let elapsed = msToTime(split.elapsed);
-                        let item = elapsed + " (" + split.elapsedPlace + ") < br > < i > " +
+                        let item = elapsed + " (" + split.elapsedPlace + ") <br > <i > " +
                         duration + " (" + split.splitPlace + ")</i>";
                         splitList.push(item);
-                        splitString += split.name + ": " + elapsed + " (" + split.elapsedPlace + ")  < i > " +
-                        duration + " (" + split.splitPlace + ")</i> < br > ";
+                        splitString += split.name + ": " + elapsed + " (" + split.elapsedPlace + ")  <i > " +
+                        duration + " (" + split.splitPlace + ")</i> <br > ";
                     });
-                    if (splitString.length > 0) splitString = " < div class = 'details' > " + splitString + " < /div>";
+                    if (splitString.length > 0) splitString = " <div class = 'details' > " + splitString + " </div>";
                     // add to page
                     let row = table.insertRow();
                     row.setAttribute("data-name", name);
@@ -371,7 +371,7 @@
 													<span class="orange">${className}</span> ${splitString}
 												</td>`;
                     splitList.forEach((item) => {
-                        row.innerHTML += " < td class = 'desktop' > " + item + " < /td>";
+                        row.innerHTML += " <td class = 'desktop' > " + item + " </td>";
                     });
                     row.innerHTML += `
 												<td>${totalTimeFormatted}
